@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIDAA IPTV SMARTERS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="login-screen" class="screen">
+        <img src="logo.png" class="main-logo">
+        <div class="login-container">
+            <input type="text" id="dns" class="focusable" placeholder="http://url-do-servidor.com:8080">
+            <input type="text" id="user" class="focusable" placeholder="Usuário">
+            <input type="password" id="pass" class="focusable" placeholder="Senha">
+            <button id="btn-login" class="focusable">ENTRAR</button>
+        </div>
+    </div>
+
+    <div id="main-menu" class="screen hidden">
+        <header>
+            <img src="logo.png" class="mini-logo">
+            <div id="status-bar">Carregando dados...</div>
+        </header>
+        <div class="smarters-grid">
+            <div class="tile live focusable" onclick="loadContent('live')">
+                <div class="icon">📺</div><span>TV AO VIVO</span>
+            </div>
+            <div class="tile movies focusable" onclick="loadContent('vod')">
+                <div class="icon">🎬</div><span>FILMES</span>
+            </div>
+            <div class="tile series focusable" onclick="loadContent('series')">
+                <div class="icon">🍿</div><span>SÉRIES</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="list-screen" class="screen hidden">
+        <div class="list-container">
+            <aside id="category-list"></aside>
+            <main id="item-grid" class="grid-content"></main>
+        </div>
+        <button class="btn-back focusable" onclick="showScreen('main-menu')">Voltar</button>
+    </div>
+
+    <div id="player-screen" class="screen hidden">
+        <video id="main-video" autoplay></video>
+        <div class="epg-overlay">
+            <h2 id="epg-title">Nome do Programa</h2>
+            <p id="epg-desc">Sinopse do programa aparecerá aqui...</p>
+            <div class="player-controls">
+                <button id="btn-reminder" class="focusable">🔔 DEFINIR LEMBRETE</button>
+                <button class="focusable" onclick="closePlayer()">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

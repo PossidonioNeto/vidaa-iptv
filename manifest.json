@@ -1,0 +1,17 @@
+{
+  "name": "Meu Player IPTV",
+  "version": "1.0.0",
+  "vendor": "SeuNome",
+  "type": "webapp",
+  "appType": "html5",
+  "entryPoint": "https://seu-servidor.com/index.html",
+  "icon": "logo.png",
+  "developer": {
+    "name": "Seu Nome",
+    "email": "seuemail@exemplo.com"
+  },
+  "permissions": [
+    "video",
+    "network"
+  ]
+}
